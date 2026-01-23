@@ -1,0 +1,29 @@
+Scanning is : 
+Checking which computers/devices exist
+Checking which doors (ports) are open
+Checking what services are running
+looking from the outside.
+Scanning is like walking around a building to see which doors are unlocked.
+
+Nmap
+Network mapping
+Nmap is a tool that checks what devices and services exist on a network.
+Finding devices on a network
+Checking which ports are open
+Seeing what services are running
+Helping secure networks by finding weak spots
+
+
+
+5 Goals of Network scanning
+Host discovery
+Open ports 
+service/protocols
+Software + versions
+OS detection
+
+
+
+
+
+
