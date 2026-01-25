@@ -22,13 +22,19 @@ service/protocols
 Software + versions
 OS detection
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------
 1. Host discovery
-
 nmap -sn 192.168.0.105                    #(Just checks if alive)
 nmap -sn 192.168.0.1-254
 nmap -sn 192.168.0.105/24                 #(-sn = Skip port scan or Ping Scan )
 
-
+------------------------------------------------------------------------------------------------------------------------------------------
+2.Open Ports
+nmap -p 1-100 192.168.0.109
+nmap -p ssh,telnet,http 192.168.0.109
+nmap -p ssh,telnet,http,smtp -v 192.168.0.109
+nmap -p 21,22,80,23 -v 192.168.0.109                #-v = Verbose mode.More detail than default output.
+nmap -p 1-65535 -v  192.168.0.105   
+nmap -p 1-65535 192.168.0.105
 
 
