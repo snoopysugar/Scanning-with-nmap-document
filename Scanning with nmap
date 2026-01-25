@@ -1,4 +1,4 @@
-Scanning is : 
+Scanning is a 
 Checking which computers/devices exist
 Checking which doors (ports) are open
 Checking what services are running
@@ -13,15 +13,15 @@ Checking which ports are open
 Seeing what services are running
 Helping secure networks by finding weak spots
 
-
-
-5 Goals of Network scanning
-Host discovery
-Open ports 
-service/protocols
-Software + versions
-OS detection
-
+--------------------------------------------------------
+                                                       -
+5 Goals of Network scanning                            - 
+Host discovery                                         -
+Open ports                                             -
+service/protocols                                      -
+Software + versions                                    -
+OS detection                                           -
+                                                       -
 -------------------------------------------------------------------------------------------------------------------------------------------
 1. Host discovery
 nmap -sn 192.168.0.105                    #(Just checks if alive)
