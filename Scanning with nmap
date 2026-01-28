@@ -36,5 +36,20 @@ nmap -p ssh,telnet,http,smtp -v 192.168.0.109
 nmap -p 21,22,80,23 -v 192.168.0.109                #-v = Verbose mode.More detail than default output.
 nmap -p 1-65535 -v  192.168.0.105   
 nmap -p 1-65535 192.168.0.105
+nmap -p ssh,telnet,http 192.168.0.109
+nmap -p ssh,telnet,http,smtp -v 192.168.0.109
+nmap -p 21,22,80,23 -v 192.168.0.109
+nmap -p- 192.168.0.109
+sudo nmap -A 192.168.0.109
+sudo nmap -sV 192.168.0.109
+sudo nmap -O 192.168.0.109
+nmap -sT 192.168.0.109
+sudo nmap -sS 192.168.0.109
+nmap -sA 192.168.0.109
+nmap -sF 192.168.0.109
+nmap -sX 192.168.0.109
+nmap -sN 192.168.0.109
+sudo nmap -p 22 -sT -T2 192.168.0.109
+sudo nmap -sC 192.168.0.109
 
 
