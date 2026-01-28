@@ -6,29 +6,23 @@ Checking which doors (ports) are open
 Checking what services are running
 looking from the outside.
 Scanning is like walking around a building to see which doors are unlocked.
-
-⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕
-
-Nmap
+---
+### Nmap
 Network mapping
 Nmap is a tool that checks what devices and services exist on a network.
 Finding devices on a network
 Checking which ports are open
 Seeing what services are running
 Helping secure networks by finding weak spots
-
-⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕
-
-5 Goals of Network scanning
+---
+### 5 Goals of Network scanning
 Host discovery
 Open ports 
 service/protocols
 Software + versions
 OS detection
-
-⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕
-
-→Host discovery
+---
+### Host discovery
 Just checks if alive
 nmap -sn 192.168.0.105   
 
@@ -37,13 +31,8 @@ nmap -sn 192.168.0.1-254
 
 -sn =scan network Skip port scan or Ping Scan 
 nmap -sn 192.168.0.105/24
-
-
-
-
-
-
-→Open ports + service/protocols
+---
+### Open ports + service/protocols
 
 scanning open ports from 1 to 65535 ranges
 nmap -p 1-65535 192.168.0.105
@@ -124,14 +113,11 @@ sudo nmap -p 22 -sT -T2 192.168.0.109
 -sC  Nmap to run the default NSE scripts (Nmap Scripting Engine).
 -sC turns Nmap from a port scanner into a service enumerator.
 sudo nmap -sC 192.168.0.109
-
-
-
-→Software + versions
+---
+### Software + versions
 sudo nmap -sV 192.168.0.109
-
-
-#OS detection
+---
+### OS detection
 sudo nmap -O 192.168.0.109
 
 
