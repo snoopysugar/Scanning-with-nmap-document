@@ -27,5 +27,128 @@ To understand the attack surface
 To choose the right exploit
 
 
-
 No scan = no awareness. Nmap turns the unknown into known.
+
+---
+Scanning with nmap
+
+Scanning is : 
+Checking which computers/devices exist
+Checking which doors (ports) are open
+Checking what services are running
+looking from the outside.
+Scanning is like walking around a building to see which doors are unlocked.
+---
+### Nmap
+Network mapping
+Nmap is a tool that checks what devices and services exist on a network.
+Finding devices on a network
+Checking which ports are open
+Seeing what services are running
+Helping secure networks by finding weak spots
+---
+### 5 Goals of Network scanning
+Host discovery
+Open ports 
+service/protocols
+Software + versions
+OS detection
+---
+### Host discovery
+Just checks if alive
+nmap -sn 192.168.0.105   
+
+-sn is a scanning  network . scan network from local network
+nmap -sn 192.168.0.1-254
+
+-sn =scan network Skip port scan or Ping Scan 
+nmap -sn 192.168.0.105/24
+---
+### Open ports + service/protocols
+
+scanning open ports from 1 to 65535 ranges
+nmap -p 1-65535 192.168.0.105
+
+scanning open ports from 1 to 65535 ranges with better output
+-v = Verbose mode.More detail than default output.
+nmap -p 1-65535 -v  192.168.0.105   
+
+scanning open ports from 1 to 100 ranges
+nmap -p 1-100 192.168.0.109
+
+scanning specific ports 
+nmap -p ssh,telnet,http 192.168.0.109
+
+scanning specific ports with verbose
+nmap -p ssh,telnet,http,smtp -v 192.168.0.109
+
+scanning specific ports with verbose
+nmap -p 21,22,80,23 -v 192.168.0.109
+
+scan all ports
+nmap -p- 192.168.0.109
+
+scan aggressively for all ports
+sudo nmap -A 192.168.0.109
+
+TCP full scan 
+TCP  completes 3 way handshake & establish connection
+Basic TCP port scan
+Easily detect by firewall
+Why using : Simple and reliable check if a port is open.
+Use when you just want basic connectivity.
+nmap -sT 192.168.0.109
+
+TCP HALF-OPEN / SYN SCAN (-sS)
+Complete 2nd phase of 3 way handshake
+Open : Respond with SYN/ACK
+Closed : RST
+Filtered : no response ( firewall is active)
+Why using : Fast and quieter scan without fully connecting.
+Use for normal port scanning.
+sudo nmap -sS 192.168.0.109
+
+TCP Acknowledgement scan
+Firewall detection
+Firewall active - no respond
+Firewall off - RST
+Why using : Checks if a firewall is filtering traffic.
+Use to understand firewall behavior.
+nmap -sA 192.168.0.109
+No firewale (unfiltered)
+
+TCP FIN / XMAS / NULL  (-sF / -sX / -sN )
+Why using : Sends strange TCP packets to test firewall/IDS rules.
+Used to test how strict security devices are.
+
+FIN SCAN (-sF)
+Open : no Respond 
+Closed : RST
+Filtered : response ( firewall is active)
+nmap -sF 192.168.0.109
+
+XMAS SCAN (-sX)
+Open : no Respond
+Closed : RST
+Filtered : no response ( firewall is active)
+nmap -sX 192.168.0.109
+
+NULL SCAN (-sN)
+Open : no Respond 
+Closed : RST
+Filtered : no response ( firewall is active)
+nmap -sN 192.168.0.109
+
+Scan only port 22 , Tries a full TCP connection to the port withTiming template , -T2 Timing template = Polite / slow
+sudo nmap -p 22 -sT -T2 192.168.0.109
+
+-sC  Nmap to run the default NSE scripts (Nmap Scripting Engine).
+-sC turns Nmap from a port scanner into a service enumerator.
+sudo nmap -sC 192.168.0.109
+---
+### Software + versions
+sudo nmap -sV 192.168.0.109
+---
+### OS detection
+sudo nmap -O 192.168.0.109
+
