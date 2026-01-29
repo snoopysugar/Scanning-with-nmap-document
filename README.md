@@ -28,5 +28,5 @@ To choose the right exploit
 
 
 No scan = no awareness. Nmap turns the unknown into known.
-
+new
 
