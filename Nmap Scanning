@@ -20,3 +20,5 @@
 Scan a network range:
 ```bash
 nmap -sn 192.168.0.1-254
+CIDR scan:
+nmap -sn 192.168.0.105/24
